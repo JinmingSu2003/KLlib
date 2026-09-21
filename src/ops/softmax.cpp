@@ -2,18 +2,8 @@
 
 at::Tensor softmax_cuda(at::Tensor input);
 
-at::Tensor softmax(at::Tensor input)
-{
-    return softmax_cuda(input);
-}
-
-
-
+// schema 统一在 bindings.cpp 的 TORCH_LIBRARY(kl, m) 里声明
 TORCH_LIBRARY_IMPL(kl, CUDA, m)
 {
-    m.impl("softmax", &softmax);
+    m.impl("softmax", &softmax_cuda);
 }
-
-// PYBIND11_MODULE(TORCH_EXTENSION_NAME, m)
-// {
-// }

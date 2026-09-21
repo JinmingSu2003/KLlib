@@ -2,18 +2,9 @@
 
 at::Tensor reduce_cuda(at::Tensor input);
 
-at::Tensor reduce(at::Tensor input)
-{
-    return reduce_cuda(input);
-}
-
-
+// schema 统一在 bindings.cpp 的 TORCH_LIBRARY(kl, m) 里声明
 TORCH_LIBRARY_IMPL(kl, CUDA, m)
 {
-    m.impl("reduce", &reduce);
+    m.impl("reduce", &reduce_cuda);
 }
-
-// PYBIND11_MODULE(TORCH_EXTENSION_NAME, m)
-// {
-// }
 

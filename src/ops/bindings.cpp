@@ -7,8 +7,8 @@
 torch::Tensor softmax_cuda(torch::Tensor input);
 torch::Tensor reduce_cuda(torch::Tensor input);
 torch::Tensor gemm_cuda(
-    torch::Tensor& A,
-    torch::Tensor& B
+    torch::Tensor A,
+    torch::Tensor B
 );
 torch::Tensor rmsnorm_add_cuda(torch::Tensor A,
 torch::Tensor B,torch::Tensor C);
@@ -16,7 +16,22 @@ torch::Tensor siluxmul_cuda(torch::Tensor gate,
     torch::Tensor up);
 
 // ==========================================================
-// 2. 绑定模块 (Pybind11 Binding)
+// 2. Schema 定义 (TORCH_LIBRARY)
+// 注意：同一个命名空间在整份扩展里只能有一个 TORCH_LIBRARY 块，
+// 所有算子的签名统一写在这里；具体实现放在各 ops/*.cpp 的
+// TORCH_LIBRARY_IMPL 里（那个可以重复出现）。
+// ==========================================================
+TORCH_LIBRARY(kl, m)
+{
+    m.def("softmax(Tensor input) -> Tensor");
+    m.def("reduce(Tensor input) -> Tensor");
+    m.def("gemm4096(Tensor A, Tensor B) -> Tensor");
+    m.def("rmsnorm_add(Tensor A, Tensor B, Tensor C) -> Tensor");
+    m.def("siluxmul(Tensor gate, Tensor up) -> Tensor");
+}
+
+// ==========================================================
+// 3. 绑定模块 (Pybind11 Binding)
 // ==========================================================
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) 
 {

@@ -2,18 +2,11 @@
 
 at::Tensor siluxmul_cuda(at::Tensor gate,
     at::Tensor up);
-at::Tensor siluxmul(at::Tensor gate,
-    at::Tensor up){
-        return siluxmul_cuda(gate,up);
-    }
 
-
+// schema 统一在 bindings.cpp 的 TORCH_LIBRARY(kl, m) 里声明
 TORCH_LIBRARY_IMPL(kl, CUDA, m)
 {
-    m.impl("siluxmul", &siluxmul);
+    m.impl("siluxmul", &siluxmul_cuda);
 }
 
-// PYBIND11_MODULE(TORCH_EXTENSION_NAME, m)
-// {
-// }
 

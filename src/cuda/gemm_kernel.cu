@@ -260,8 +260,8 @@ __global__ void gemm(//m128 n64 k16 tm8 tn8 4096 4096 blocksize 128
 
 
 at::Tensor gemm_cuda(
-    at::Tensor& A,
-    at::Tensor& B
+    at::Tensor A,
+    at::Tensor B
 ) {
     constexpr int M = 4096;
     constexpr int N = 4096;

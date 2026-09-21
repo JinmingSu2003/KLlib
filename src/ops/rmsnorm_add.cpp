@@ -2,18 +2,10 @@
 
 at::Tensor rmsnorm_add_cuda(at::Tensor A,at::Tensor B,at::Tensor W);
 
-at::Tensor rmsnorm_add(at::Tensor A,at::Tensor B,at::Tensor W)
-{
-    return rmsnorm_add_cuda(A,B,W);
-}
-
-
+// schema 统一在 bindings.cpp 的 TORCH_LIBRARY(kl, m) 里声明
 TORCH_LIBRARY_IMPL(kl, CUDA, m)
 {
-    m.impl("rmsnorm_add", &rmsnorm_add);
+    m.impl("rmsnorm_add", &rmsnorm_add_cuda);
 }
 
-// PYBIND11_MODULE(TORCH_EXTENSION_NAME, m)
-// {
-// }
 
