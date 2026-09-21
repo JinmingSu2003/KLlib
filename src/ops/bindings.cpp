@@ -12,6 +12,8 @@ torch::Tensor gemm_cuda(
 );
 torch::Tensor rmsnorm_add_cuda(torch::Tensor A,
 torch::Tensor B,torch::Tensor C);
+torch::Tensor siluxmul_cuda(torch::Tensor gate,
+    torch::Tensor up);
 
 // ==========================================================
 // 2. 绑定模块 (Pybind11 Binding)
@@ -30,5 +32,5 @@ PYBIND11_MODULE(TORCH_EXTENSION_NAME, m)
 
     m.def("gemm4096", &gemm_cuda, "gemm forward (CUDA)");
     m.def("rmsnorm_add", &rmsnorm_add_cuda, "rmsnorm_add forward (CUDA)");
-    
+    m.def("siluxmul", &siluxmul_cuda, "siluxmul forward (CUDA)");
 }

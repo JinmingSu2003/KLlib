@@ -19,6 +19,8 @@ setup(
                 "src/cuda/gemm_kernel.cu",
                 "src/ops/rmsnorm_add.cpp",
                 "src/cuda/rmsnorm_add_kernel.cu",
+                "src/ops/silu_x_mul.cpp",
+                "src/cuda/silu_x_mul_kernel.cu",
             ],
             extra_compile_args={
                 'cxx': ['-O3', '-std=c++17'],

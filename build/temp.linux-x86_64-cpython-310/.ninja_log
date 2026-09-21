@@ -26,3 +26,6 @@
 15522	60741	1789974662958063164	/home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/cuda/rmsnorm_add_kernel.o	524e47d2b47298ae
 60742	77060	1789974679283966929	/home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/bindings.o	d78fc4e4f7a7ea7b
 77061	90899	1789974693122668028	/home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/gemm4096.o	bead7f686b3f2d61
+12	44151	1789985825495899728	/home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/cuda/silu_x_mul_kernel.o	ad503e6dab07129f
+12	15372	1789986093471484620	/home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/bindings.o	d78fc4e4f7a7ea7b
+15372	29561	1789986107660427185	/home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/silu_x_mul.o	99bf226f00cc3240

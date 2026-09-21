@@ -29,11 +29,13 @@ rule cuda_compile
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/cuda/gemm_kernel.o: cuda_compile /home/glowing/projects/KLlib/src/cuda/gemm_kernel.cu
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/cuda/reduce_kernel.o: cuda_compile /home/glowing/projects/KLlib/src/cuda/reduce_kernel.cu
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/cuda/rmsnorm_add_kernel.o: cuda_compile /home/glowing/projects/KLlib/src/cuda/rmsnorm_add_kernel.cu
+build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/cuda/silu_x_mul_kernel.o: cuda_compile /home/glowing/projects/KLlib/src/cuda/silu_x_mul_kernel.cu
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/cuda/softmax_kernel.o: cuda_compile /home/glowing/projects/KLlib/src/cuda/softmax_kernel.cu
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/bindings.o: compile /home/glowing/projects/KLlib/src/ops/bindings.cpp
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/gemm4096.o: compile /home/glowing/projects/KLlib/src/ops/gemm4096.cpp
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/reduce.o: compile /home/glowing/projects/KLlib/src/ops/reduce.cpp
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/rmsnorm_add.o: compile /home/glowing/projects/KLlib/src/ops/rmsnorm_add.cpp
+build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/silu_x_mul.o: compile /home/glowing/projects/KLlib/src/ops/silu_x_mul.cpp
 build /home/glowing/projects/KLlib/build/temp.linux-x86_64-cpython-310/src/ops/softmax.o: compile /home/glowing/projects/KLlib/src/ops/softmax.cpp
 
 
